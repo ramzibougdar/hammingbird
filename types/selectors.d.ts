@@ -27,6 +27,7 @@ declare type listing = {
 };
 
 declare type cart = {
+  overview: string,
   discountCode: string,
   discountName: string,
   displayPromo: string,
@@ -107,6 +108,10 @@ declare type quantityInput = {
   alert: (param: string) => string,
 };
 
+declare type formValidation = {
+  default: string,
+};
+
 type SelectorsMap = {
   alert: {
     selector: string,
@@ -146,4 +151,5 @@ type SelectorsMap = {
   visiblePassword: visiblePassword,
   desktopMenu: desktopMenu,
   quantityInput: quantityInput,
+  formValidation: formValidation,
 };

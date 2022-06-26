@@ -27,6 +27,7 @@ export const listing = {
 };
 
 export const cart = {
+  overview: '.cart-overview',
   discountCode: '.js-discount .js-code',
   discountName: '[name=discount_name]',
   displayPromo: '.display-promo',
@@ -96,7 +97,7 @@ export const desktopMenu = {
   dropdownItemAnchor: (depth: number) => `.js-menu-desktop a[data-depth="${depth}"]`,
 };
 
-export const quantityInput = {
+export const qtyInput = {
   default: '.js-quantity-button',
   modal: '.modal-dialog .js-quantity-button',
   increment: '.js-increment-button',
@@ -104,10 +105,15 @@ export const quantityInput = {
   confirm: '.confirmation',
   icon: '.material-icons',
   spinner: '.spinner-border',
-  alert: (param: string): string => `#js-product-line-alert--${param}`,
+  alert: (id: number): string => `#js-product-line-alert--${id}`,
+};
+
+export const formValidation = {
+  default: '.form-validation',
 };
 
 const selectorsMap = {
+  qtyInput,
   alert: {
     selector: '#notifications .container',
     alert: '.alert',
@@ -145,7 +151,7 @@ const selectorsMap = {
   mobileMenu,
   visiblePassword,
   desktopMenu,
-  quantityInput,
+  formValidation,
 };
 
 export default selectorsMap;
