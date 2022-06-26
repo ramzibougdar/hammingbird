@@ -1,0 +1,43 @@
+.module-blocked-categories > .form-group {
+	display: flex;
+}
+
+.module-blocked-categories > .form-group:last-child {
+	margin: 0;
+}
+.module-blocked-categories .btn-switch {
+	margin: auto 0 auto auto;
+}
+.module-blocked-categories .image-wrapper {
+	margin: auto 15px auto 0;
+}
+.module-blocked-categories .module-infos {
+	margin: auto auto auto 0;
+}
+.module-blocked-categories .module-infos span {
+	display: block;
+}
+
+.module-blocked-categories .module-learn-more span {
+	font-size: .875rem;
+}
+.module-blocked-categories .module-learn-more a .material-icons {
+    font-size: 1rem;
+    margin-left:-5px;
+}
+#module-cookiebanner-settings .btn-switch{
+	position: relative;
+	display: inline-block;
+}
+
+#cookies_settings_form .form-footer{
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: end;
+	-ms-flex-pack: end;
+	justify-content: flex-end;
+	margin-top: 2rem;
+	margin-bottom: 0.5rem;
+	text-align: center;
+}
