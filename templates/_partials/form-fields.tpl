@@ -7,21 +7,16 @@
   {block name='form_field_item_hidden'}
     <input type="hidden" name="{$field.name}" value="{$field.value}">
   {/block}
-
 {else}
-
-  <div class="mb-3 {if !empty($field.errors)}has-error{/if}">
-
-    {if ($field.type !== 'checkbox')}
-      <label class="form-label{if $field.required} required{/if}">
-        {if $field.type !== 'checkbox'}
-          {$field.label}
-        {/if}
-      </label>
-    {/if}
-
+  <div class="mb-3 {if ($field.type !== 'checkbox' && $field.type !== 'radio-buttons')}form-floating{/if} {if !empty($field.errors)}has-error{/if}">
+      {if $field.type == 'radio-buttons'}
+          <label class="form-label{if $field.required} required{/if}">
+              {if $field.type !== 'checkbox'}
+                  {$field.label}
+              {/if}
+          </label>
+      {/if}
     {if $field.type === 'select'}
-
       {block name='form_field_item_select'}
         <select class="form-select" name="{$field.name}" {if $field.required}required{/if}>
           <option value disabled selected>{l s='-- please choose --' d='Shop.Forms.Labels'}</option>
@@ -92,7 +87,7 @@
     {elseif $field.type === 'date'}
 
       {block name='form_field_item_date'}
-        <input name="{$field.name}" class="form-control" type="date" value="{$field.value}"{if isset($field.availableValues.placeholder)} placeholder="{$field.availableValues.placeholder}" aria-label="{$field.availableValues.placeholder}"{/if}>
+        <input name="{$field.name}" class="form-control {if !empty($field.errors)}is-invalid{/if}" type="date" value="{$field.value}"{if isset($field.availableValues.placeholder)} placeholder="{$field.availableValues.placeholder}" aria-label="{$field.availableValues.placeholder}"{/if}>
         {if isset($field.availableValues.comment)}
           <span class="form-text">
             {$field.availableValues.comment}
@@ -125,41 +120,29 @@
     {elseif $field.type === 'password'}
 
       {block name='form_field_item_password'}
-
-        <div class="input-group password-field js-parent-focus">
           <input
-            class="form-control js-child-focus js-visible-password"
-            name="{$field.name}"
-            title="{l s='At least 5 characters long' d='Shop.Forms.Help'}"
-            type="password"
-            {if $field.autocomplete}autocomplete="{$field.autocomplete}"{/if}
-            value=""
-            pattern=".{literal}{{/literal}5,{literal}}{/literal}"
-            {if $field.required}required{/if}
+                  class="form-control js-child-focus js-visible-password {if !empty($field.errors)}is-invalid{/if}"
+                  name="{$field.name}"
+                  title="{l s='At least: 8 characters, one uppercase, one lowercase and one number.' d='Shop.Forms.Help'}"
+                  type="password"
+                  placeholder="{$field.label}"
+                  {if $field.autocomplete}autocomplete="{$field.autocomplete}"{/if}
+                  value=""
+                  pattern="{literal}(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}{/literal}"
+                  {if $field.required}required{/if}
           >
-
-          <button
-            class="btn btn-primary"
-            type="button"
-            data-action="show-password"
-            data-text-show="{l s='Show' d='Shop.Theme.Actions'}"
-            data-text-hide="{l s='Hide' d='Shop.Theme.Actions'}"
-          >
-            <i class="material-icons">visibility</i>
-          </button>
-        </div>
       {/block}
 
     {else}
 
       {block name='form_field_item_other'}
         <input
-          class="form-control"
+          class="form-control {if !empty($field.errors)}is-invalid{/if}"
           name="{$field.name}"
           type="{$field.type}"
           value="{$field.value}"
           {if $field.autocomplete}autocomplete="{$field.autocomplete}"{/if}
-          {if isset($field.availableValues.placeholder)}placeholder="{$field.availableValues.placeholder}"{/if}
+          placeholder="{if isset($field.availableValues.placeholder)}{$field.availableValues.placeholder}{else}{$field.label}{/if}"
           {if $field.maxLength}maxlength="{$field.maxLength}"{/if}
           {if $field.required}required{/if}
           aria-label="{$field.name}"
@@ -171,6 +154,14 @@
         {/if}
       {/block}
 
+    {/if}
+
+    {if ($field.type !== 'checkbox' && $field.type !== 'radio-buttons')}
+      <label class="form-label{if $field.required} required{/if}">
+        {if $field.type !== 'checkbox'}
+          {$field.label}
+        {/if}
+      </label>
     {/if}
 
     {block name='form_field_errors'}

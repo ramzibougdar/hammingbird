@@ -1,0 +1,155 @@
+.megasocialconnect{
+  .logo_image {
+    height: 21px;
+    border: 0;
+    width: 21px;
+    margin-bottom: 0;
+    margin-top: 0;
+    vertical-align: top;
+  }
+  .pssocialconnect-row {
+    text-align: center;
+    margin: 10px 0;
+  }
+  .fab {
+    margin-right: 2px;
+  }
+  /* Plain Button */
+  .pssocialconnectButton {
+    color: #FFFFFF;
+    font-weight: 600;
+    width: 100%;
+    border: 1px solid;
+    transition: transform .25s, color .15s
+    ease-in-out,background-color .15s
+    ease-in-out,border-color .15s
+    ease-in-out,box-shadow .15s
+    ease-in-out;
+  }
+  .pssocialconnectButton > .pssocialconnect-label {
+    color: unset;
+  }
+  /* Mini Button */
+  .pssocialconnectButton.mini {
+    height: 40px;
+    width: 40px;
+    margin-right: 10px;
+  }
+  .pssocialconnectButton.mini > .pssocialconnect-label {
+    display: none;
+  }
+  /* Background Color (for all buttons */
+  .pssocialconnectButton.facebook-button {
+    background-color: #3B5998
+  }
+  .pssocialconnectButton.google-button {
+    background-color: #EA4335
+  }
+  .pssocialconnectButton.linkedin-button {
+    background-color: #0077b5
+  }
+  .pssocialconnectButton.paypal-button {
+    background-color: #179BD7
+  }
+  .pssocialconnectButton.amazon-button {
+    background-color: #FF9900
+  }
+  /* Outline Button */
+  .pssocialconnectButton.outline {
+    border-color: #979797;
+    color: #FFFFFF;
+    background-color: transparent;
+  }
+  .pssocialconnectButton.outline.facebook-button {
+    color: #3B5998;
+  }
+  .pssocialconnectButton.outline.google-button {
+    color: #EA4335;
+  }
+  .pssocialconnectButton.outline.linkedin-button {
+    color: #0077b5;
+  }
+  .pssocialconnectButton.outline.paypal-button {
+    color: #179BD7;
+  }
+  .pssocialconnectButton.outline.amazon-button {
+    color: #FF9900;
+  }
+  /* FULL INVERT */
+  .pssocialconnectButton.invert:hover {
+    border: 1px solid #979797;
+    background-color: transparent;
+  }
+  .pssocialconnectButton.facebook-button.invert:hover {
+    color: #3B5998;
+    border-color: #3B5998;
+  }
+  .pssocialconnectButton.google-button.invert:hover {
+    color: #EA4335;
+    border-color: #EA4335;
+  }
+  .pssocialconnectButton.linkedin-button.invert:hover {
+    color: #0077b5;
+    border-color: #0077b5;
+  }
+  .pssocialconnectButton.paypal-button.invert:hover {
+    color: #179BD7;
+    border-color: #179BD7;
+  }
+  .pssocialconnectButton.amazon-button.invert:hover {
+    color: #FF9900;
+    border-color: #FF9900;
+  }
+  /* OUTLINE INVERT */
+  .pssocialconnectButton.outline.invert:hover {
+    color: #FFFFFF;
+  }
+  .pssocialconnectButton.outline.facebook-button.invert:hover {
+    background-color: #3B5998;
+    border-color: #3B5998;
+  }
+  .pssocialconnectButton.outline.google-button.invert:hover {
+    background-color: #EA4335;
+    border-color: #EA4335;
+  }
+  .pssocialconnectButton.outline.linkedin-button.invert:hover {
+    background-color: #0077b5;
+    border-color: #0077b5;
+  }
+  .pssocialconnectButton.outline.paypal-button.invert:hover {
+    background-color: #179BD7;
+    border-color: #179BD7;
+  }
+  .pssocialconnectButton.outline.amazon-button.invert:hover {
+    background-color: #FF9900;
+    border-color: #FF9900;
+  }
+  /* OUTLINE SHADOW BG */
+  .pssocialconnectButton.outline.shadow:hover {
+    box-shadow: 0 2px 8px 0 rgba(0,0,0,0.2);
+    transform: translateY(-2px);
+  }
+  /* OUTLINE FILL SHADOW */
+  .pssocialconnectButton.outline.fill:hover {
+    background-color: rgba(0,0,0,0.06);
+  }
+  /* FULL SHADOW BG */
+  .pssocialconnectButton.shadow:hover {
+    box-shadow: 0 2px 8px 0 rgba(0,0,0,0.2);
+    transform: translateY(-2px);
+  }
+  /* FULL FILL SHADOW */
+  .pssocialconnectButton.fill:hover {
+    background-color: rgba(0,0,0,0.06);
+    color: #535252;
+  }
+  /* LEFT ALIGN TEXT */
+  .pssocialconnectButton.left {
+    padding-left: 25px;
+    text-align: left;
+  }
+  .pssocialconnectButton.left.mini {
+    text-align: center;
+    padding: 0;
+  }
+}

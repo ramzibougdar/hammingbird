@@ -31,13 +31,5 @@
         <a href="fax:{$contact_infos.fax}">{$contact_infos.fax}</a>
       </div>
     {/if}
-
-    {if $contact_infos.email && $display_email}
-      <div class="contact__email">
-        <i class="material-icons">mail</i>
-        {mailto address=$contact_infos.email encode="javascript"}
-      </div>
-    {/if}
-
   </div>
 </div>

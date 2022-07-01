@@ -29,6 +29,9 @@
       {/block}
     {/block}
 
+    {block name='display_after_login_form'}
+      {hook h='displayCustomerLoginFormAfter'}
+    {/block}
     <div class="login__forgot-password text-end mb-4">
       <a href="{$urls.pages.password}" rel="nofollow">
         {l s='Forgot your password?' d='Shop.Theme.Customeraccount'}
